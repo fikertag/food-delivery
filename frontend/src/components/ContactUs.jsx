@@ -9,7 +9,7 @@ export default function ContactUs() {
   const handleComment = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/items/comment", {
+      await axios.post("https://back-mfs7.onrender.com/api/items/comment", {
         name,
         comment,
       });

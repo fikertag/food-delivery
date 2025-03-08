@@ -3,10 +3,10 @@ import axios from "axios";
 import { useCatagoryContext } from "../hooks/useCatagoryContext";
 import ImageUploader from "../components/ImageUploader";
 import toast from "react-hot-toast";
-import MenuPriceProp from "../components/menuPriceProp";
+// import MenuPriceProp from "../components/menuPriceProp";
 import Left from "../components/icons/Left";
 import { useItemsContext } from "../hooks/useItemsContex";
-import Item from "../components/item";
+// import Item from "../components/item";
 
 const FormData = require("form-data");
 

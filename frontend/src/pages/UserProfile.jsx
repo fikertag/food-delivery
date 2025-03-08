@@ -45,7 +45,7 @@ const UserProfile = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios.patch(
-          `https://back-mfs7.onrender.com/user/updateuser/${id}`,
+          `https://back-mfs7.onrender.com/api/user/updateuser/${id}`,
           { name, phone, country, city, region, street, admin }
         );
         localStorage.setItem("user", JSON.stringify(data));

@@ -32,11 +32,8 @@ export default function TestimonialSection() {
   return (
     <section className="py-8 ">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <Topic Mainhedder={"Testimony"} />
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-          What Our Customers Say 💬
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Topic Mainhedder="Testimony" subhedder="What Our Customers Say " />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 pt-10">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}

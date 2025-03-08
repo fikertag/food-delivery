@@ -4,7 +4,7 @@ const Topic = ({ Mainhedder, subhedder }) => {
       <h3 className=" uppercase text-gray-500 font-semibold leading-4 text-xl">
         {subhedder}
       </h3>
-      <h2 className=" text-primary font-bold text-3xl sm:text-4xl italic">
+      <h2 className=" text-primary font-bold text-3xl sm:text-4xl ">
         {Mainhedder}
       </h2>
     </>

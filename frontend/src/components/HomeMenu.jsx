@@ -1,5 +1,5 @@
-import salad1 from "/images/sallad1.png";
-import salad2 from "/images/sallad2.png";
+import salad1 from "/images/sallad1-.png";
+import salad2 from "/images/sallad2-.png";
 import MenuItems from "./MenuItems";
 import Topic from "./Topic";
 
@@ -15,7 +15,7 @@ const HomeMenu = () => {
         </div>
       </div>
       <div className="text-center mb-10">
-        <Topic Mainhedder="Our best seller" subhedder="Check Out" />
+        <Topic Mainhedder="Don’t Miss Out" subhedder="Your Cart Awaits" />
       </div>
       <div className="grid grid-cols-1 min-[650px]:grid-cols-2 min-[950px]:grid-cols-3 gap-4 justify-center mx-auto w-full">
         <MenuItems />

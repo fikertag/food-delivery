@@ -1,6 +1,27 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const handleComment = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/api/items/comment", {
+        name,
+        comment,
+      });
+      setName("");
+      setComment("");
+      toast.success("thank you for your comment");
+    } catch (error) {
+      console.log(error);
+      toast.error("network failed");
+    }
+  };
+
   return (
     <section className=" py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -35,7 +56,7 @@ export default function ContactUs() {
 
           {/* Right Side - Contact Form */}
           <div className="bg-white p-3 md:p-6 rounded-2xl shadow-lg">
-            <form className="space-y-4">
+            <form onSubmit={handleComment} className="space-y-4">
               <div>
                 <label className="text-gray-700 font-medium">Your Name</label>
                 <input
@@ -43,16 +64,8 @@ export default function ContactUs() {
                   className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
                   placeholder="Enter your name"
                   required
-                />
-              </div>
-
-              <div>
-                <label className="text-gray-700 font-medium">Your Email</label>
-                <input
-                  type="email"
-                  className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
-                  placeholder="Enter your email"
-                  required
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                 />
               </div>
 
@@ -60,9 +73,11 @@ export default function ContactUs() {
                 <label className="text-gray-700 font-medium">Message</label>
                 <textarea
                   rows={4}
-                  className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+                  className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none resize-none"
                   placeholder="Type your message..."
                   required
+                  onChange={(e) => setComment(e.target.value)}
+                  value={comment}
                 ></textarea>
               </div>
 

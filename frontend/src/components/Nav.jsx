@@ -19,15 +19,19 @@ const Nav = () => {
       <div className=" flex items-center justify-between px-3 pr-5 ">
         <nav className="flex items-center gap-4 sm:gap-8 text-defualt ">
           <Link className="text-primary font-bold text-2xl" to={"/"}>
-            Fumm
+            BiteRush
           </Link>
-          <Link to={"/"}>Home</Link>
-          <Link to={"/menu"}>Menu</Link>
+          <Link className="md:font-medium md:text-lg" to={"/"}>
+            Home
+          </Link>
+          <Link className="md:font-medium md:text-lg" to={"/menu"}>
+            Menu
+          </Link>
         </nav>
         <nav className="flex items-center gap-4 text-defualt font-semibold">
           {!user && (
             <>
-              <Link className="" to={"/login"}>
+              <Link className="md:font-medium md:text-lg" to={"/login"}>
                 Login
               </Link>
             </>

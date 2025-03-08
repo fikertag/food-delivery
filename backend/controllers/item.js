@@ -1,5 +1,6 @@
 const item = require("../models/itemsModule");
 const catagory = require("../models/catagory");
+const Comment = require("../models/comment");
 
 // get all items
 const getItems = async (req, res) => {
@@ -45,6 +46,20 @@ const postImage = async (req, res) => {
       itemCatagory: itemCatagory,
     });
     res.status(200).json(items);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+//post comment for admin
+const postComment = async (req, res) => {
+  const { name, comment } = req.body;
+
+  try {
+    const response = await Comment.create({
+      name: name,
+      comment,
+    });
+    res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -170,4 +185,5 @@ module.exports = {
   getCatagory,
   updateCatagory,
   deleteCatagory,
+  postComment,
 };

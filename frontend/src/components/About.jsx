@@ -17,10 +17,10 @@ const About = () => {
         {/* Right Side - Content */}
         <div>
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            About <span className="text-primary">Yummi</span>
+            About <span className="text-primary">BiteRush</span>
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            At <strong>Yummi</strong>, we believe in bringing delicious meals
+            At <strong>BiteRush</strong>, we believe in bringing delicious meals
             straight to your doorstep. Our mission is to connect food lovers
             with their favorite restaurants, delivering fresh, hot, and
             flavorful dishes within minutes.

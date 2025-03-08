@@ -55,7 +55,7 @@ button[type="submit"]:disabled,
   @apply cursor-not-allowed bg-red-400;
 }
 div.tabs > * {
-  @apply bg-gray-300 text-gray-700 rounded-lg py-1 px-3 text-xs transition-all;
+  @apply bg-gray-300 text-gray-700 rounded-lg py-1 px-3 text-xs md:text-base transition-all;
 }
 div.tabs > *.active {
   @apply bg-primary text-white transition-all;

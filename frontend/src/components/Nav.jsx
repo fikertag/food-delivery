@@ -3,15 +3,20 @@ import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useCartContext } from "../hooks/useCartContext";
 import ShoppingCart from "./icons/ShoppingCart";
-import { FiUser } from "react-icons/fi";
+// import { FiUser } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const { cart } = useCartContext();
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
   const handleClick = () => {
     logout();
+    navigate("/");
   };
 
   return (
@@ -21,7 +26,7 @@ const Nav = () => {
           <Link className="text-primary font-bold text-2xl" to={"/"}>
             BiteRush
           </Link>
-          <Link className="md:font-medium md:text-lg" to={"/"}>
+          <Link className="md:font-medium md:text-lg hidden md:flex" to={"/"}>
             Home
           </Link>
           <Link className="md:font-medium md:text-lg" to={"/menu"}>
@@ -45,13 +50,13 @@ const Nav = () => {
                 <div className="hidden md:flex">{user.email}</div>
 
                 <div className="md:hidden">
-                  <FiUser />
+                  <RxHamburgerMenu />
                 </div>
               </Link>
 
               <button
                 onClick={handleClick}
-                className="bg-primary rounded-lg text-white px-5 text-xs py-1"
+                className="bg-primary rounded-lg text-white px-5 text-xs py-1 hidden md:flex"
               >
                 Logout
               </button>

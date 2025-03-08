@@ -11,21 +11,23 @@ export const useLogin = () => {
     setError(null);
     setIsLoading(null);
 
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.post(
-          "https://back-mfs7.onrender.com/api/user/login",
-          { email: email, password: password }
-        );
-        localStorage.setItem("user", JSON.stringify(data));
-        dispatch({ type: "LOGIN", payload: data });
-        setIsLoading(false);
-      } catch (error) {
-        setIsLoading(false);
-        setError(error.response.data.error);
-      }
-    };
-    fetchData();
+    setError(null);
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(
+        "https://back-mfs7.onrender.com/api/user/login",
+        { email, password }
+      );
+      console.log(data);
+      localStorage.setItem("user", JSON.stringify(data));
+      dispatch({ type: "LOGIN", payload: data });
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setError(error.response?.data?.error || "login failed");
+      throw error;
+    }
   };
+
   return { login, isLoading, error };
 };

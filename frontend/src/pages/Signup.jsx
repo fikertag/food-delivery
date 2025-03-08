@@ -14,14 +14,14 @@ const Signup = () => {
       setEmail("");
       setPassword("");
     } catch (error) {
-      console.error("Signup failed:", error);
+      console.log("signup error");
     }
   };
 
   return (
     <section className="mt-8">
       <h1 className="text-center text-primary text-4xl mb-5">Register</h1>
-      <form className="block max-w-xs mx-auto" onSubmit={handleSubmit}>
+      <form className="block max-w-xs mx-auto relative" onSubmit={handleSubmit}>
         <input
           type="email"
           placeholder="email"
@@ -45,7 +45,12 @@ const Signup = () => {
         <button type="submit" disabled={isLoading}>
           Register
         </button>
-        {error && <div className="text-red-500 text-xs"> {error} </div>}
+        {error && (
+          <div className="text-red-500 text-xs mt-4 ml-[125px] absolute bottom-[50px] ">
+            {" "}
+            {error}{" "}
+          </div>
+        )}
         <Link
           to={"/login"}
           className=" mt-8 text-center block w-full mb-2 rounded-xl border p-2 border-gray-300 bg-gray-100"

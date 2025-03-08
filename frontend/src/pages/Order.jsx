@@ -23,7 +23,7 @@ const Order = () => {
                 {order.userId.email}
               </div>
               <p className="text-xs text-gray-500">
-                {order.items[0].itemId.name}, {order.items[1]?.itemId.name}
+                {order.items[0]?.itemId.name}, {order.items[1]?.itemId.name}
               </p>
             </div>
             <div className="text-gray-400 text-xs text-start hidden md:flex">

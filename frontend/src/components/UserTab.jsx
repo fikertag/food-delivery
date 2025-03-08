@@ -4,7 +4,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function UserTabs() {
   const { user } = useAuthContext();
-  const [admin, setAdmin] = useState(user?.admin || true);
+  const [admin, setAdmin] = useState(user?.admin || false);
 
   return (
     <>

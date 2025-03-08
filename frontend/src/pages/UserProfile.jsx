@@ -3,8 +3,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
+  const navigate = useNavigate();
+
   const { id } = useParams();
 
   const [name, setName] = useState("");
@@ -40,21 +43,21 @@ const UserProfile = () => {
     fetchData();
   }, []);
 
-  const handleProfileSubmit = (e) => {
+  const handleProfileSubmit = async (e) => {
     e.preventDefault();
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.patch(
-          `https://back-mfs7.onrender.com/api/user/updateuser/${id}`,
-          { name, phone, country, city, region, street, admin }
-        );
-        localStorage.setItem("user", JSON.stringify(data));
-        toast.success("uploaded sucsussfully");
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
+    const loadingToast = toast.loading("loading");
+    try {
+      const { data } = await axios.patch(
+        `https://back-mfs7.onrender.com/api/user/updateuser/${id}`,
+        { name, phone, country, city, region, street, admin }
+      );
+      localStorage.setItem("user", JSON.stringify(data));
+      toast.success("updated successfully...", { id: loadingToast });
+      navigate("/about/users");
+    } catch (error) {
+      console.log(error);
+      toast.error("something went wrong", { id: loadingToast });
+    }
   };
 
   return (

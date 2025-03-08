@@ -52,7 +52,7 @@ button.primary {
 }
 button[type="submit"]:disabled,
 .submit:disabled {
-  @apply cursor-not-allowed bg-red-400;
+  @apply cursor-not-allowed bg-primary/50;
 }
 div.tabs > * {
   @apply bg-gray-300 text-gray-700 rounded-lg py-1 px-3 text-xs md:text-base transition-all;

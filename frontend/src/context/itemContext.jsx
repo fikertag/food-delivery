@@ -26,7 +26,7 @@ export const ItemsContextPovider = ({ children }) => {
   const [state, dispatch] = useReducer(itemsReducer, { items: null });
   const fetchData = async () => {
     try {
-      const { data } = await axios("http://localhost:5000/api/items");
+      const { data } = await axios("https://back-mfs7.onrender.com/api/items");
       dispatch({ type: "set_item", payload: data });
     } catch (error) {
       console.log(error);

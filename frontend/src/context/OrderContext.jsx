@@ -33,7 +33,7 @@ export const OrderContextProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/order",
+        "https://back-mfs7.onrender.com/api/order",
         orderData
       );
 
@@ -52,7 +52,9 @@ export const OrderContextProvider = ({ children }) => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/order");
+      const response = await axios.get(
+        "https://back-mfs7.onrender.com/api/order"
+      );
       dispatch({ type: "set_order", payload: response.data });
     } catch (error) {
       console.error("Error fetching orders:", error);

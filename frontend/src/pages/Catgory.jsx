@@ -13,9 +13,9 @@ const Catagory = () => {
     e.preventDefault();
     const fetchData = async () => {
       const method = editableCatagory ? "patch" : "post";
-      let url = `http://localhost:5000/api/items/catagory`;
+      let url = `https://back-mfs7.onrender.com/api/items/catagory`;
       if (editableCatagory) {
-        url = `http://localhost:5000/api/items/catagory/${editableCatagory._id}`;
+        url = `https://back-mfs7.onrender.com/api/items/catagory/${editableCatagory._id}`;
       }
       const loadingToast = toast.loading("Loading...");
       try {
@@ -43,7 +43,7 @@ const Catagory = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios.delete(
-          `http://localhost:5000/api/items/catagory/${id}`
+          `https://back-mfs7.onrender.com/api/items/catagory/${id}`
         );
         toast.success("uploaded sucsussfully");
         dispatch({ type: "delete_item", payload: data });

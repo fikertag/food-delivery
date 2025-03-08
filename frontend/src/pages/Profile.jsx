@@ -22,7 +22,7 @@ const Profile = () => {
       const loadingToast = toast.loading("Loading...");
       try {
         const { data } = await axios.patch(
-          `http://localhost:5000/api/user/updateuser/${user._id}`,
+          `https://back-mfs7.onrender.com/api/user/updateuser/${user._id}`,
           { name, phone, country, city, region, street }
         );
         dispatch({ type: "LOGIN", payload: data });

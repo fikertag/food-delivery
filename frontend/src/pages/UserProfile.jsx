@@ -21,7 +21,7 @@ const UserProfile = () => {
   const fetchData = async () => {
     try {
       const { data } = await axios(
-        `http://localhost:5000/api/user/getuser/${id}`
+        `https://back-mfs7.onrender.com/api/user/getuser/${id}`
       );
       // setUser(data)
       setName(data[0].name || "");
@@ -45,7 +45,7 @@ const UserProfile = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios.patch(
-          `http://localhost:5000/api/user/updateuser/${id}`,
+          `https://back-mfs7.onrender.com/user/updateuser/${id}`,
           { name, phone, country, city, region, street, admin }
         );
         localStorage.setItem("user", JSON.stringify(data));

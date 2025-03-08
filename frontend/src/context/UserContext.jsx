@@ -23,7 +23,9 @@ export const UserContextProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios("http://localhost:5000/api/user/users");
+      const response = await axios(
+        "https://back-mfs7.onrender.com/api/user/users"
+      );
       dispatch({ type: "set_user", payload: response.data });
     } catch (error) {
       console.log(error);

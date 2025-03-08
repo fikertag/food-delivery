@@ -13,7 +13,7 @@ export const useSignup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/user/signup",
+        "https://back-mfs7.onrender.com/api/user/signup",
         { email, password }
       );
 

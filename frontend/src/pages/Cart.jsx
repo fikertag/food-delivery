@@ -3,6 +3,7 @@ import { useCartContext } from "../hooks/useCartContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import CartItem from "../components/CartItem";
 import { useOrderContext } from "../hooks/useOrder";
+import { useNavigate } from "react-router-dom";
 
 const Order = () => {
   const { cart } = useCartContext();
@@ -14,8 +15,12 @@ const Order = () => {
     total += p.price * p.quantity;
   }
   const FinalTotal = (total + total * 0.01 + total * 0.005).toFixed(2);
-
+  const navigate = useNavigate();
   const handleCheckout = () => {
+    if (!user) {
+      navigate("/signup");
+      return;
+    }
     const orderData = {
       userId: user._id,
       items: cart.map((item) => ({

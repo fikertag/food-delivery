@@ -40,7 +40,6 @@ export const CatagoryContextPovider = ({ children }) => {
       const { data } = await axios.get(
         "https://back-mfs7.onrender.com/api/items/catagory"
       );
-      console.log("catagory", data);
       dispatch({ type: "set_item", payload: data });
     } catch (error) {
       console.log(error);

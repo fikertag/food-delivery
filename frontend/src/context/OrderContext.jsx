@@ -26,10 +26,9 @@ export const OrderContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(orderReducer, { orders: [] });
 
-  const navigate = useNavigate();
-
   const createOrder = async (orderData) => {
     const loadingToast = toast.loading("Loading...");
+    const navigate = useNavigate();
 
     try {
       const response = await axios.post(
@@ -64,10 +63,6 @@ export const OrderContextProvider = ({ children }) => {
   useEffect(() => {
     fetchOrders();
   }, []);
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
-
   return (
     <OrderContext.Provider value={{ ...state, dispatch, createOrder }}>
       {children}

@@ -25,10 +25,9 @@ export const OrderContextProvider = ({ children }) => {
   const { dispatch: edit_item } = useCartContext();
 
   const [state, dispatch] = useReducer(orderReducer, { orders: [] });
-
+  const navigate = useNavigate();
   const createOrder = async (orderData) => {
     const loadingToast = toast.loading("Loading...");
-    const navigate = useNavigate();
 
     try {
       const response = await axios.post(

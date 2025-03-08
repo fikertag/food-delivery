@@ -19,16 +19,16 @@ const Order = () => {
   const handleCheckout = () => {
     if (!user) {
       navigate("/signup");
-      return;
+    } else {
+      const orderData = {
+        userId: user._id,
+        items: cart.map((item) => ({
+          itemId: item._id,
+          quantity: item.quantity,
+        })),
+      };
+      createOrder(orderData);
     }
-    const orderData = {
-      userId: user._id,
-      items: cart.map((item) => ({
-        itemId: item._id,
-        quantity: item.quantity,
-      })),
-    };
-    createOrder(orderData);
   };
 
   return (

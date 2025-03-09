@@ -51,7 +51,8 @@ const Order = () => {
                     <div className="text-center font-medium  "> Items </div>
                     <div className="flex flex-col items-center gap-1 text-gray-400 text-sm ">
                       {order.items.map((item) => (
-                        <div key={item._id}>{item.itemId?.name}</div>
+                        <div key={item._id}>name</div>
+                        // {item.itemId?.name}
                       ))}
                     </div>
                   </div>

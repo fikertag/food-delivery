@@ -20,7 +20,11 @@ const Order = () => {
           >
             <div className="flex  smflex-row gap-5  items-center justify-between">
               <div className="flex items-center">
-                <div className="rounded-md h-fit w-fit py-2 px-3 bg-green-600 text-white text-sm">
+                <div
+                  className={`rounded-md h-fit w-fit py-2 px-3 ${
+                    order.status === pending ? "bg-red-700" : "bg-green-800"
+                  } text-white text-sm`}
+                >
                   {order.status}
                 </div>
               </div>

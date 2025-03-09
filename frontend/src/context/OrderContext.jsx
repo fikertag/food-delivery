@@ -56,7 +56,6 @@ export const OrderContextProvider = ({ children }) => {
         const response = await axios.get(
           `https://back-mfs7.onrender.com/api/order`
         );
-        console.log(response.data);
         dispatch({ type: "set_order", payload: response.data });
       } catch (error) {
         console.error("Error fetching orders:", error);

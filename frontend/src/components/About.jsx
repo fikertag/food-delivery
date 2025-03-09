@@ -5,7 +5,7 @@ const About = () => {
         {/* Left Side - Image */}
         <div className="relative">
           <img
-            src="/images/hoeny.png"
+            src="/images/res.jpg"
             alt="Food Delivery"
             className="rounded-2xl shadow-lg"
             loading="lazy"

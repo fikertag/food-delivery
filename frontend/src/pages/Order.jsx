@@ -10,8 +10,6 @@ const Order = () => {
   const toggleOrder = (orderId) => {
     setExpandedOrderId((prevId) => (prevId === orderId ? null : orderId));
   };
-  console.log(orders);
-
   return (
     <div className=" my-8 max-w-3xl mx-auto flex flex-col gap-2 p-4  ">
       {orders ? (
@@ -52,8 +50,7 @@ const Order = () => {
                     <div className="text-center font-medium  "> Items </div>
                     <div className="flex flex-col items-center gap-1 text-gray-400 text-sm ">
                       {order.items.map((item) => (
-                        <div key={item._id}>name</div>
-                        // {item.itemId?.name}
+                        <div key={item._id}>{item.itemId?.name}</div>
                       ))}
                     </div>
                   </div>

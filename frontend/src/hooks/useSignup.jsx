@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
+  const navigate = useNavigate();
 
   const signup = async (email, password) => {
     setError(null);
@@ -20,6 +22,7 @@ export const useSignup = () => {
       localStorage.setItem("user", JSON.stringify(data));
       dispatch({ type: "LOGIN", payload: data });
       setIsLoading(false);
+      navigate("/");
     } catch (error) {
       setIsLoading(false);
       setError(error.response?.data?.error || "Signup failed");

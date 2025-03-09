@@ -74,7 +74,7 @@ export const OrderContextProvider = ({ children }) => {
 
   useEffect(() => {
     fetchOrders();
-  }, []);
+  }, [user]);
   return (
     <OrderContext.Provider value={{ ...state, dispatch, createOrder }}>
       {children}

@@ -67,9 +67,9 @@ const postComment = async (req, res) => {
 
 // delete items
 const deleteItem = async (req, res) => {
-  const { id } = req.params;
+  // const { id } = req.params;
   try {
-    const items = await item.findByIdAndDelete({ _id: id });
+    const items = await catagory.deleteMany();
     if (!items) {
       return res.status(404).json({ error: "no such item" });
     }

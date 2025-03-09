@@ -60,7 +60,7 @@ const Menu = () => {
   }
   return (
     <>
-      {showPopup && (
+      {/* {showPopup && (
         <div
           onClick={() => setShowPopup(false)}
           className="fixed inset-0 bg-black/80 flex items-center justify-center"
@@ -151,7 +151,7 @@ const Menu = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       <section className="mt-3 flex justify-center w-full">
         <div className="max-w-4xl">
           {catagory?.length > 0 &&

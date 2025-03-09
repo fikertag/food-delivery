@@ -27,6 +27,7 @@ export default function CartItem({ product }) {
           src={`/uploads/${product.image}`}
           alt={product.name}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 

@@ -167,6 +167,7 @@ const MenuItems = () => {
                     src={`/uploads/${item.image}`}
                     alt={"image"}
                     className="w-full h-24 object-contain items-center flex"
+                    loading="lazy"
                   />
                 </div>
 

@@ -26,6 +26,7 @@ export default function Item({ item, addToCart, bestSeller = false }) {
           src={`/uploads/${item.image}`}
           alt={"image"}
           className="w-full h-40 object-contain"
+          loading="lazy"
         />
         {bestSeller && (
           <span className="absolute top-2 left-2 bg-primary text-white text-sm px-3 py-1 rounded-full">

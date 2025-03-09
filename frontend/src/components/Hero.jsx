@@ -24,7 +24,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="relative hidden lg:block">
-        <img src={pizza} alt={"pizza"} className=" h-72 w-72" />
+        <img src={pizza} alt={"pizza"} className=" h-72 w-72" loading="lazy" />
       </div>
     </section>
   );

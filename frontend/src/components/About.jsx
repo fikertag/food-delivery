@@ -8,6 +8,7 @@ const About = () => {
             src="/images/hoeny.png"
             alt="Food Delivery"
             className="rounded-2xl shadow-lg"
+            loading="lazy"
           />
           <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm">
             Fast & Fresh 🚀

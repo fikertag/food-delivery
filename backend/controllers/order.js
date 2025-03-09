@@ -16,7 +16,7 @@ const getOrders = async (req, res) => {
 // Get a specific order by ID
 const getOrder = async (req, res) => {
   try {
-    const order = await Order.findById(req.params.id)
+    const order = await Order.find({ userId: req.params.id })
       .populate("userId")
       .populate("items.itemId");
     if (!order) return res.status(404).json({ message: "Order not found" });

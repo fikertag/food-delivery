@@ -18,7 +18,6 @@ export const useLogin = () => {
         "https://back-mfs7.onrender.com/api/user/login",
         { email, password }
       );
-      console.log(data);
       localStorage.setItem("user", JSON.stringify(data));
       dispatch({ type: "LOGIN", payload: data });
       setIsLoading(false);

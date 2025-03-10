@@ -24,14 +24,14 @@ const Order = () => {
                 <div
                   className={`rounded-md h-fit px-2 py-2 flex justify-center border ${
                     order.status === "completed"
-                      ? "border-[#2e8f53]"
-                      : "border-orange-500"
+                      ? "border-green-800"
+                      : "border-red-800"
                   } text-sm`}
                 >
                   {order.status === "completed" ? (
-                    <CheckSquareOffset size={24} color="#2e8f53" />
+                    <CheckSquareOffset size={24} color="#166534" />
                   ) : (
-                    <HourglassHigh size={24} color="#f97316" />
+                    <HourglassHigh size={24} color="#991b1b" />
                   )}
                 </div>
               </div>

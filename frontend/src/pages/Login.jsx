@@ -25,7 +25,7 @@ const Login = () => {
       <form className="block max-w-xs mx-auto relative" onSubmit={handleSubmit}>
         <input
           type="email"
-          placeholder="email"
+          placeholder="admin@gmail.com"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -35,7 +35,7 @@ const Login = () => {
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="12345678"
           onChange={(e) => {
             setPassword(e.target.value);
           }}

@@ -15,6 +15,7 @@
     "date-fns": "^4.1.0",
     "image-uploader": "^2.0.2",
     "lucide-react": "^0.477.0",
+    "phosphor-react": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",

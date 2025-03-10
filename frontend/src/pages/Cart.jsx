@@ -17,6 +17,9 @@ const Order = () => {
   const FinalTotal = (total + total * 0.01 + total * 0.005).toFixed(2);
   const navigate = useNavigate();
   const handleCheckout = () => {
+    if (cart.length < 1) {
+      return;
+    }
     if (!user) {
       navigate("/signup");
     } else {
@@ -75,8 +78,9 @@ const Order = () => {
             </div>
             <div className="flex items-center p-6 pt-0">
               <button
+                disabled={cart.length === 0}
                 onClick={handleCheckout}
-                className="text-sm bg-primary  hover:bg-primary/90 h-10 px-4 py-2 w-full rounded-lg"
+                className="text-sm bg-primary disabled:cursor-not-allowed  hover:bg-primary/90 h-10 px-4 py-2 w-full rounded-lg"
               >
                 Proceed to Checkout
               </button>

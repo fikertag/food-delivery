@@ -1,6 +1,7 @@
 import { useOrderContext } from "../hooks/useOrder";
 import { format } from "date-fns";
 import { useState } from "react";
+import { CheckSquareOffset, HourglassHigh, List } from "phosphor-react";
 
 const Order = () => {
   const { orders } = useOrderContext();
@@ -16,20 +17,26 @@ const Order = () => {
         orders.map((order) => (
           <div
             key={order._id}
-            className="  flex flex-col  smflex-row gap-5 border border-black/10 shadow-sm bg-white rounded-lg py-2 px-2 "
+            className="  flex flex-col  gap-5 border border-black/10 shadow-sm bg-white rounded-lg py-2 px-2 "
           >
-            <div className="flex  smflex-row gap-5  items-center justify-between">
+            <div className="flex gap-5  items-center ">
               <div className="flex items-center">
                 <div
-                  className={`rounded-md h-fit w-20 py-2 flex justify-center ${
-                    order.status === "pending" ? "bg-red-600" : "bg-green-800"
-                  } text-white text-sm`}
+                  className={`rounded-md h-fit px-2 py-2 flex justify-center border ${
+                    order.status === "completed"
+                      ? "border-[#2e8f53]"
+                      : "border-orange-500"
+                  } text-sm`}
                 >
-                  {order.status}
+                  {order.status === "completed" ? (
+                    <CheckSquareOffset size={24} color="#2e8f53" />
+                  ) : (
+                    <HourglassHigh size={24} color="#f97316" />
+                  )}
                 </div>
               </div>
 
-              <div className="md:flex-1">
+              <div className="flex-1">
                 <div className=" font-medium text-sm truncate">
                   {order.userId.email}
                 </div>
@@ -42,9 +49,13 @@ const Order = () => {
               </div>
               <div
                 onClick={() => toggleOrder(order._id)}
-                className=" flex items-center h-[34px] border text-xs px-5 rounded-lg cursor-pointer hover:bg-black/20 transition-all"
+                className=" flex items-center py-2 border text-xs px-2 rounded-lg cursor-pointer hover:bg-black/20 transition-all"
               >
-                {expandedOrderId === order._id ? "Hide Order" : "Show Order"}
+                {expandedOrderId === order._id ? (
+                  <List size={24} />
+                ) : (
+                  <List size={24} />
+                )}
               </div>
             </div>
             {expandedOrderId === order._id && (

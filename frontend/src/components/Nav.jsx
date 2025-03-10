@@ -65,7 +65,7 @@ const Nav = () => {
           <Link to={"cart"} className=" relative">
             {" "}
             <ShoppingCart />{" "}
-            <span className=" absolute -top-2 -right-4 bg-primary rounded-full text-xs leading-3 text-white py-1 px-1 ">
+            <span className=" absolute -top-2 -right-4 flex justify-center items-center bg-primary rounded-full text-xs leading-3 text-white h-4 w-4 ">
               {cart.length}
             </span>{" "}
           </Link>

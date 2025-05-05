@@ -11,6 +11,10 @@ export default function MenuItems() {
       <Item key={item._id} item={item} addToCart={true} bestSeller={true} />
     ))
   ) : (
-    <div className="text-2xl  w-full   mx-auto">Loading...</div>
+    <>
+      {[...Array(6)].map((_, index) => (
+        <ItemSkeleton key={index} />
+      ))}
+    </>
   );
 }
